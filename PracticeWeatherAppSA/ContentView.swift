@@ -7,18 +7,22 @@
 
 import SwiftUI
 
+// Building mimic UI of the Apple Weather app
+// How the 3 SwiftUI Stacks work
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            ZStack {
+                LinearGradient(colors: [.teal.opacity(0.7), .blue.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea(.all)
+            }
+            
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+
