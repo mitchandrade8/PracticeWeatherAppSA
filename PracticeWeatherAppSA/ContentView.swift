@@ -18,7 +18,7 @@ struct ContentView: View {
                     .ignoresSafeArea(.all)
                 
                 VStack(spacing: 8) {
-                    Text("Cupertino, CA")
+                    Text("Greeley, CO")
                         .font(.system(size: 32, weight: .bold, design: .serif))
                         .foregroundColor(.white)
                     
@@ -48,6 +48,21 @@ struct ContentView: View {
                         }
                         .padding(.top, 40)
                         
+                        
+                        Spacer()
+                        
+                        Button {
+                            print("Button tapped!")
+                        } label: {
+                            Text("Light Mode")
+                                .frame(width: 280, height: 50)
+                                .background(.white)
+                                .font(.system(size: 20, weight: .bold, design: .default))
+                                .cornerRadius(8)
+                        }
+                        
+                        
+                        Spacer()
                         
                     }
                     
