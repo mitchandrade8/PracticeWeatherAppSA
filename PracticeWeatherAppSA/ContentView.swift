@@ -17,7 +17,7 @@ struct ContentView: View {
                 LinearGradient(colors: [.teal.opacity(0.7), .blue.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea(.all)
                 
-                VStack(spacing: 4) {
+                VStack() {
                     Text("Cupertino, CA")
                         .font(.system(size: 32, weight: .bold, design: .serif))
                         .foregroundColor(.white)
@@ -26,6 +26,18 @@ struct ContentView: View {
                         .frame(height: 1)
                         .foregroundColor(.white)
                         .padding(.horizontal, 80)
+                    
+                    VStack(spacing: 8) {
+                        Image(systemName: "cloud.sun.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 220, height: 220)
+                        
+                        Text("76°")
+                            .font(.system(size: 70, weight: .medium, design: .serif))
+                            .foregroundColor(.white)
+                    }
                     
                     Spacer()
                 }
