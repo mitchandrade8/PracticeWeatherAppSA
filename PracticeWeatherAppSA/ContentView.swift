@@ -14,12 +14,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                BackgroundView()
+                BackgroundView(topColor: .blue, bottomColor: .lightBlue)
                 
                 VStack(spacing: 8) {
-                    Text("Greeley, CO")
-                        .font(.system(size: 32, weight: .bold, design: .serif))
-                        .foregroundColor(.white)
+                    CityTextView(cityName: "Greeley, CO")
                     
                     Rectangle()
                         .frame(height: 1)
@@ -107,10 +105,22 @@ struct DailyTemperatureSnapshotView: View {
 
 struct BackgroundView: View {
     
-    
+    var topColor: Color
+    var bottomColor: Color
     
     var body: some View {
-        LinearGradient(colors: [.blue, .lightBlue], startPoint: .topLeading, endPoint: .bottomTrailing)
+        LinearGradient(colors: [topColor, bottomColor], startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea(.all)
+    }
+}
+
+struct CityTextView: View {
+    
+    var cityName: String
+    
+    var body: some View {
+        Text(cityName)
+            .font(.system(size: 32, weight: .medium, design: .default))
+            .foregroundColor(.white)
     }
 }
