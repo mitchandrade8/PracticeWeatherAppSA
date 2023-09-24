@@ -46,7 +46,7 @@ struct ContentView: View {
                             DailyTemperatureSnapshotView(day: "Thr", temperatureImage: "cloud.sun.fill", dailyTemperature: "87")
                             DailyTemperatureSnapshotView(day: "Fri", temperatureImage: "sun.max.fill", dailyTemperature: "80")
                         }
-                        .padding(.top, 65)
+                        .padding(.top, 40)
                         
                         
                     }
