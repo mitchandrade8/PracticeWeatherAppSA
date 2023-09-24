@@ -37,6 +37,14 @@ struct ContentView: View {
                         Text("76°")
                             .font(.system(size: 70, weight: .medium, design: .serif))
                             .foregroundColor(.white)
+                        
+                        HStack(spacing: 10) {
+                            DailyTemperatureSnapshotView(day: "Mon", temperatureImage: "cloud.sun.rain.fill", dailyTemperature: "58")
+                            DailyTemperatureSnapshotView(day: "Tue", temperatureImage: "cloud.sun.fill", dailyTemperature: "76")
+                            DailyTemperatureSnapshotView(day: "Wed", temperatureImage: "sun.max.fill", dailyTemperature: "94")
+                            DailyTemperatureSnapshotView(day: "Thr", temperatureImage: "cloud.sun.fill", dailyTemperature: "87")
+                            DailyTemperatureSnapshotView(day: "Fri", temperatureImage: "sun.max.fill", dailyTemperature: "80")
+                        }
                     }
                     
                     Spacer()
@@ -54,3 +62,27 @@ struct ContentView: View {
     ContentView()
 }
 
+
+struct DailyTemperatureSnapshotView: View {
+    
+    var day = ""
+    var temperatureImage = ""
+    var dailyTemperature = ""
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 8) {
+            Text(day)
+                .foregroundColor(.white)
+            
+            Image(systemName: temperatureImage)
+                .renderingMode(.original)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 60, height: 60)
+            
+            Text("\(dailyTemperature)°")
+                .font(.system(size: 24, weight: .medium, design: .serif))
+                .foregroundColor(.white)
+        }
+    }
+}
