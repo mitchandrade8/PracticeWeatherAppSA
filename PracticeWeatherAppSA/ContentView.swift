@@ -101,9 +101,12 @@ struct DailyTemperatureSnapshotView: View {
                 .foregroundColor(.white)
             
             Image(systemName: temperatureImage)
-                .renderingMode(.original)
+                .symbolRenderingMode(.multicolor)
+//                .renderingMode(.original)
                 .resizable()
-                .scaledToFit()
+                .foregroundStyle(.white, .teal, .gray)
+                .aspectRatio(contentMode: .fit)
+//                .scaledToFit()
                 .frame(width: 50, height: 50)
             
             Text("\(dailyTemperature)°")
@@ -147,7 +150,8 @@ struct MainWeatherStatusView: View {
             Image(systemName: imageName)
                 .renderingMode(.original)
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: .fit)
+//                .scaledToFit()
                 .frame(width: 200, height: 200)
             
             Text("\(temperature)°")
