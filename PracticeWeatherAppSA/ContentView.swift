@@ -12,6 +12,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // Structs can not hold state, why we have a @State property wrapper
+    
     // Source of truth changes the data
     @State private var isNight = false
     
@@ -28,7 +30,7 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .padding(.horizontal, 80)
                     
-                    MainWeatherStatusView(imageName: "cloud.sun.fill", temperature: 76)
+                    MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: isNight ? 54 : 76)
                     
                     HStack(spacing: 20) {
                         
@@ -145,7 +147,7 @@ struct MainWeatherStatusView: View {
                 .renderingMode(.original)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 220, height: 220)
+                .frame(width: 200, height: 200)
             
             Text("\(temperature)°")
                 .font(.system(size: 70, weight: .medium, design: .serif))
