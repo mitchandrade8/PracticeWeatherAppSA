@@ -11,10 +11,14 @@ import SwiftUI
 // How the 3 SwiftUI Stacks work
 
 struct ContentView: View {
+    
+    // Source of truth changes the data
+    @State private var isNight = false
+    
     var body: some View {
         NavigationView {
             ZStack {
-                BackgroundView(topColor: .blue, bottomColor: .lightBlue)
+                BackgroundView(topColor: isNight ? .black : .blue, bottomColor: isNight ? .gray : Color("lightBlue"))
                 
                 VStack(spacing: 8) {
                     CityTextView(cityName: "Greeley, CO")
@@ -60,12 +64,12 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        print("Button tapped!")
+                        isNight.toggle()
                     } label: {
                         WeatherButton(
                             title: "Change Day Time",
                             backgroundColor: .white,
-                            textForegroundColor: .blue)
+                            textForegroundColor: isNight ? .black : .blue)
                     }
                     
                     Spacer()
