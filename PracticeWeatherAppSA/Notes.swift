@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+// MARK: - Updating to the most recent version of iOS
+
+// Will get errors and warnings from Xcode
+
+// Depreciated syntax
+/// Apple will give you time for changing the code
+
+// WWDC
+/// The docs will show what is gonna be depreciated
+/// June - September
