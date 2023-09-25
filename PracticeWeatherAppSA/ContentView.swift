@@ -27,11 +27,32 @@ struct ContentView: View {
                     MainWeatherStatusView(imageName: "cloud.sun.fill", temperature: 76)
                     
                     HStack(spacing: 20) {
-                        DailyTemperatureSnapshotView(day: "Mon", temperatureImage: "cloud.sun.rain.fill", dailyTemperature: "58")
-                        DailyTemperatureSnapshotView(day: "Tue", temperatureImage: "cloud.sun.fill", dailyTemperature: "76")
-                        DailyTemperatureSnapshotView(day: "Wed", temperatureImage: "sun.max.fill", dailyTemperature: "94")
-                        DailyTemperatureSnapshotView(day: "Thr", temperatureImage: "cloud.sun.fill", dailyTemperature: "87")
-                        DailyTemperatureSnapshotView(day: "Fri", temperatureImage: "sun.max.fill", dailyTemperature: "80")
+                        
+                        DailyTemperatureSnapshotView(
+                            day: "Mon",
+                            temperatureImage: "cloud.sun.rain.fill",
+                            dailyTemperature: "58")
+                        
+                        DailyTemperatureSnapshotView(
+                            day: "Tue",
+                            temperatureImage: "cloud.sun.fill",
+                            dailyTemperature: "76")
+                        
+                        DailyTemperatureSnapshotView(
+                            day: "Wed",
+                            temperatureImage: "sun.max.fill",
+                            dailyTemperature: "94")
+                        
+                        DailyTemperatureSnapshotView(
+                            day: "Thr",
+                            temperatureImage: "cloud.sun.fill",
+                            dailyTemperature: "87")
+                        
+                        DailyTemperatureSnapshotView(
+                            day: "Fri",
+                            temperatureImage: "sun.max.fill",
+                            dailyTemperature: "80")
+                        
                     }
                     .padding(.top, 40)
                     
@@ -41,12 +62,12 @@ struct ContentView: View {
                     Button {
                         print("Button tapped!")
                     } label: {
-                        Text("Light Mode")
-                            .frame(width: 280, height: 50)
-                            .background(.white)
-                            .font(.system(size: 20, weight: .bold, design: .default))
-                            .cornerRadius(8)
+                        WeatherButton(
+                            title: "Change Day Time",
+                            backgroundColor: .white,
+                            textForegroundColor: .blue)
                     }
+                    
                     Spacer()
                     
                 }
@@ -130,3 +151,5 @@ struct MainWeatherStatusView: View {
         }
     }
 }
+
+
