@@ -104,7 +104,7 @@ struct DailyTemperatureSnapshotView: View {
                 .symbolRenderingMode(.multicolor)
 //                .renderingMode(.original)
                 .resizable()
-                .foregroundStyle(.white, .teal, .gray)
+//                .foregroundStyle(.white, .teal, .gray)
                 .aspectRatio(contentMode: .fit)
 //                .scaledToFit()
                 .frame(width: 50, height: 50)
@@ -123,8 +123,12 @@ struct BackgroundView: View {
 //    var bottomColor: Color
     
     var body: some View {
-        LinearGradient(colors: [isNight ? .black : .blue, isNight ? .gray : Color("lightBlue") ], startPoint: .topLeading, endPoint: .bottomTrailing)
-            .ignoresSafeArea(.all)
+//        LinearGradient(colors: [isNight ? .black : .blue, isNight ? .gray : Color("lightBlue") ], startPoint: .topLeading, endPoint: .bottomTrailing)
+//            .ignoresSafeArea(.all)
+        
+        ContainerRelativeShape()
+            .fill(isNight ? Color.black.gradient : Color.blue.gradient)
+            .ignoresSafeArea()
     }
 }
 
